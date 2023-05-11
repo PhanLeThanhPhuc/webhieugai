@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TAN_Product</title>
+     <!-- CSS -->
+	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+	<link href="js/OwlCarousel2/dist/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="js/OwlCarousel2/dist/assets/owl.theme.default.min.css" rel="stylesheet">
+	<link href="font/fontawesome/css/all.min.css" rel="stylesheet">
+	<link href="css/product.css" rel="stylesheet">
+	<link href="css/style_home.css" rel="stylesheet">
+	<!-- JavaScript--> 
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/popper.min.js"></script> 
+	<script src="js/bootstrap-4.4.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#mobilenavi").hide();
+			$("#blackscreen").hide();
+			$("#bgmobilesearch").hide();
+			$("#filtermobi").hide();
+			
+			$("#iconhamburger").click(function(){
+				 $("#mobilenavi").slideToggle();
+				 $("#blackscreen").fadeToggle();
+			});
+			
+			$("#mobifilter").click(function(){
+				$("#filtermobi").slideToggle();
+			});
+			
+			$("#blackscreen").click(function(){
+				$("#mobilenavi,#bgmobilesearch").slideUp();
+				$("#blackscreen").fadeOut();
+				$("#filtermobi").fadeOut();
+			});
+			
+			$("#icons").click(function(){
+				$("#bgmobilesearch").slideToggle();
+				$("#blackscreen").fadeToggle();
+			});
+		});
+		
+		$(document). ready(function(){
+  			$(".owl-carousel").owlCarousel({
+				item: 5,
+				margin: 30,
+				loop: true,
+				autoplay: true,
+				autoplayTimeout: 3000,
+				autoplayHoverPause: true,
+				responsive:{
+					0:{
+						items: 2,
+						autoplay: false,
+						center: true,
+					},
+					576:{
+						items: 2,
+						autoplay: false,
+						center: true,
+					},
+					768:{
+						items: 3,
+					},
+					992:{
+						items: 4,
+					},
+					1200:{
+						items: 4,
+					},
+				}
+			});
+		});
+	</script>
+  </head>
+  <body>
+  	<!--Black Sreen-->
+	  	<div class="container-fluid d-md-none" id="blackscreen">
+	  </div><!--container-fluid-->
+	  
+  	<!-- HEADER -->
+		<div class="container-fluid d-none d-md-block" id="bgheader">
+	 	<div class="container">
+		 	<div class="row">
+				<div class="col-xl-3
+							col-lg-3
+							col-md-4" id="aboutstore">
+				<ul class="nav">
+					<li class="nav-item">
+						<a class="nav-link" href="THIEN_FAQ.html">FAQ</a>
+					</li>
+					<li class="nav-item">|</li>
+					<li class="nav-item">
+						<a class="nav-link" href="LONG_ABOUT US.html">About Us</a>
+					</li>
+				</ul>
+				</div><!--aboutstore-->
+				<div class="col-xl-5 offset-xl-1
+							col-lg-5 offset-lg-1
+							col-md-4 offset-md-0" id="searchbox">
+				<form action="" method="post">
+					<input type="text" placeholder="Search here..." id="searchfill">
+					<button id="searchicon"><i class="fas fa-search"></i></button>
+				</form>
+				</div><!--searchbox-->
+				<div class="col-xl-3
+							col-lg-3
+							col-md-4" id="signinup">
+				<ul class="nav justify-content-end">
+					<li class="nav-item">
+						<a class="nav-link" href="#login" data-toggle="modal"><i class="fas fa-shopping-cart"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#login" data-toggle="modal">Log In</a>
+					</li>
+					<li class="nav-item">|</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#register" data-toggle="modal">Register</a>
+					</li>
+				</ul>
+				</div><!--signinup-->
+			</div><!--row-->
+		 </div><!--container-->
+	  </div><!--container-fluid-->
+	  
+	  <!--Modal Log In-->
+	  	<div class="modal fade" id="login">
+	  		<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<!--Header-->
+						<div class="modal-header">
+							<h4 class="modal-title">Log In</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div><!--modal-header-->
+					<!--Body-->
+						<div class="modal-body">
+							<form>
+								<label for="user" class="user1"><b>Username</b></label><br>
+								<input type="text" placeholder="Your username..." name="user">
+								<br>
+								<label for="pass" class="pass1"><b>Password</b></label><br>
+								<input type="password" placeholder="Your password..." name="pass">
+								<br>
+								<button type="submit" class="loginbtn">LOG IN</button>
+								<br>
+								  <label class="remember">
+									<input type="checkbox" checked="checked" name="remember"> Remember me
+								  </label>
+							</form>
+						</div><!--modal-body-->
+					<!--Footer-->
+						<div class="modal-footer">
+							<span class="psw">Forgot <a href="#">password?</a></span>
+							<button type="button" class="closebtn" data-dismiss="modal">Close</button>
+						</div><!--modal-footer-->
+				</div><!--modal-content-->
+			</div><!--modal-dialog-->
+	  	</div><!--modal-->
+	  
+	  <!--Modal Register-->
+	  	<div class="modal fade" id="register">
+	  		<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<!--Header-->
+						<div class="modal-header">
+							<h4 class="modal-title">Register</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div><!--modal-header-->
+					<!--Body-->
+						<div class="modal-body">
+							<form>
+								<label for="email" class="pass1"><b>Email</b></label>
+								  <input type="text" placeholder="Enter Email..." name="email" required>
+
+								  <label for="psw" class="pass1"><b>Password</b></label>
+								  <input type="password" placeholder="Enter Password..." name="psw" required>
+
+								  <label for="psw-repeat" class="pass1"><b>Repeat Password</b></label>
+								  <input type="password" placeholder="Repeat Password..." name="psw-repeat" required>
+
+								  <label class="remember">
+									<input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+								  </label>
+
+								  <p class="p3">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+							</form>
+						</div><!--modal-body-->
+					<!--Footer-->
+						<div class="modal-footer">
+							<button type="submit" class="regisbtn">REGISTER</button>
+							<button type="button" class="closebtn" data-dismiss="modal">Close</button>
+						</div><!--modal-footer-->
+				</div><!--modal-content-->
+			</div><!--modal-dialog-->
+	  	</div><!--modal-->
+	  
+	  
+	  <!--Navi-->
+	  <div class="container-fluid" id="bgnavi">
+	  		<div class="container">
+		  		<div class="row">
+					<div class="d-md-none
+								col-sm-2
+								col-2" id="iconhamburger">
+						<i class="fas fa-bars" id="hamburger"></i>
+					</div><!--iconhamburger-->
+					
+					<div class="col-xl-2 offset-xl-0
+								col-lg-2 offset-lg-0
+								col-md-2 offset-md-0
+								col-sm-2 offset-sm-3
+								col-2 offset-3" id="logo">
+						<a href="THIEN_HOME.html">
+							<img src="imgs/logo.png" id="logoicon">
+						</a>
+					</div><!--logo-->
+					<div class="col-xl-8 offset-xl-2
+								col-lg-9 offset-lg-1
+								col-md-10 offset-md-0
+								col-sm-4 offset-sm-2
+								d-none d-md-block" id="navi">
+						<ul class="nav justify-content-end">
+							<li class="nav-item dropdown">
+							  <a class="nav-link dropbtn" href="KHOI_PRODUCTS.html"><h4>Chains <i class="fa fa-caret-down"></i></h4></a>
+							  <div class="dropdown-content">
+								<a href="KHOI_PRODUCTS.html">Cuban Chains</a>
+								<a href="KHOI_PRODUCTS.html">Tennis Chains</a>
+								<a href="KHOI_PRODUCTS.html">Rope Chains</a>
+								<a href="KHOI_PRODUCTS.html">Sets</a>
+							  </div>
+							</li>
+							
+							<li class="nav-item dropdown">
+							  <a class="nav-link dropbtn" href="#"><h4>Bracelets <i class="fa fa-caret-down"></i></h4></a>
+							  <div class="dropdown-content">
+								<a href="LONG_PRODUCT.html">Tennis</a>
+								<a href="LONG_PRODUCT.html">Cuban</a>
+								<a href="LONG_PRODUCT.html">Sets</a>
+							  </div>
+							</li>
+							
+							<li class="nav-item">
+							  <a class="nav-link" href="TAN_Products.html"><h4>Pendants</h4></a>
+							</li>
+							
+							<li class="nav-item">
+							  <a class="nav-link" href="HIEU_PROMOTION.html"><h4>Promotion</h4></a>
+							</li>
+							
+							<li class="nav-item">
+							  <a class="nav-link" href="KHOI_NEWS.html"><h4>News</h4></a>
+							</li>
+							
+							<li class="nav-item">
+							  <a class="nav-link" href="THIEN_CONTACT.html"><h4>Contact</h4></a>
+							</li>
+						 </ul>
+					</div><!--navi-->
+					<div class="d-md-none
+								col-sm-1 offset-sm-2
+								col-1 offset-2" id="icons2">
+						<a href="LONG_SHOPPING CART.html"><i class="fas fa-shopping-cart" id="cartnavi"></i></a>
+					</div><!--icons-->
+					
+					<div class="d-md-none
+								col-sm-1 offset-sm-0
+								col-1 offset-0" id="icons">
+						<i class="fas fa-search" id="searchnavi"></i>
+					</div><!--icons-->
+				</div><!--row-->
+		  	</div><!--container-->
+	  	</div><!--container-fluid-->
+	  
+	  <!--Mobile Navi-->
+	  	<div class="container-fluid d-md-none" id="bgmobilenavi">
+	  		<div class="row">
+				<div class="col-sm-12
+							col-12" id="mobilenavi">
+					<ul class="nav flex-column">
+						<li class="nav-item dropdown">
+						  <a class="nav-link" data-toggle="dropdown" href="#"><h4>Chains <i class="fa fa-caret-down"></i></h4></a>
+						  <div class="dropdown-menu">
+							  <a class="dropdown-item" href="KHOI_PRODUCTS.html">Tennis Chains</a>
+							  <a class="dropdown-item" href="KHOI_PRODUCTS.html">Cuban Chains</a>
+							  <a class="dropdown-item" href="KHOI_PRODUCTS.html">Rope Chains</a>
+							  <a class="dropdown-item" href="KHOI_PRODUCTS.html">Sets</a>
+						  </div>
+						</li>
+						
+						<li class="nav-item dropdown">
+						  <a class="nav-link" data-toggle="dropdown" href="#"><h4>Bracelets <i class="fa fa-caret-down"></i></h4></a>
+						  <div class="dropdown-menu">
+							  <a class="dropdown-item" href="LONG_PRODUCT.html">Tennis</a>
+							  <a class="dropdown-item" href="LONG_PRODUCT.html">Cuban</a>
+							  <a class="dropdown-item" href="LONG_PRODUCT.html">Sets</a>
+						  </div>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="TAN_Products.html"><h4>Pendants</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="HIEU_PROMOTION.html"><h4>Promotion</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="KHOI_NEWS.html"><h4>News</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="THIEN_CONTACT.html"><h4>Contact</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="THIEN_FAQ.html"><h4>FAQ</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="LONG_ABOUT US.html"><h4>About us</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="#login" data-toggle="modal"><h4>Log In</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="#register" data-toggle="modal"><h4>Register</h4></a>
+						</li>
+					</ul>
+				</div><!--Mobilenavi-->
+			</div><!--row-->
+	  	</div><!--container-fluid-->
+	  <!--Mobile Search-->
+	  <div class="container-fluid d-md-none" id="bgmobilesearch">
+	  		<div class="row">
+		  		<div class="col-sm-12
+							col-12" id="mobilesearch">
+					<form action="" method="post">
+					<input type="text" placeholder="Search here..." id="mobilesearchfill">
+					<button id="mobilesearchicon"><i class="fas fa-search"></i></button>
+				</form>
+				</div><!--mobilesearch-->
+		  	</div><!--row-->
+	  </div><!--container-fluid-->
+	  
+	   <!--Banner-->
+	  <div class="container-fluid" id="bgbanner">
+		  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+			  <div class="carousel-inner">
+				<div class="carousel-item active">
+				  <img class="d-block w-100" src="imgs/banner04.jpg.png" alt="First slide">
+				</div>
+				<div class="carousel-item">
+				  <img class="d-block w-100" src="imgs/banner01.png" alt="Second slide">
+				</div>
+			  </div>
+			  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			  </a>
+			  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			  </a>
+		</div>
+	  </div><!--container-fluid-->
+	  
+
+	  <!---Product-->
+	  <div class="container-fluid">
+	  	<div class="container">
+			<div class="row">
+				<div class="col-xl-12
+							col-lg-12
+							col-md-12
+							col-ms-12
+							col-12 addressbar">
+					<ul class="breadcrumb">
+					  <li><a href="THIEN_HOME.html">Home</a></li>
+					  <li>Pendants</li>
+					</ul>
+					
+				</div><!---addressbar-->
+			</div><!---row-->
+			<div class="row">
+				<div class="col-xl-12
+							col-lg-12
+							col-md-12
+							col-ms-12
+							col-12">
+					<hr class="gach">
+				</div>
+			</div>
+			<div class="row">
+				<div class="d-md-none
+							col-ms-12
+							col-12" id="mobifilter">
+					<p>FILTER <i class="fas fa-sort"></i></p>
+				</div>
+			</div>
+		</div><!---container-->
+	  </div><!--container-fluid-->
+		  
+		  
+		  <!--filtermobi-->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="d-md-none
+							col-ms-12
+							col-12" id="filtermobi">
+					<button class="accordion">PRODUCT <i class="fa fa-caret-down"></i></button>
+					<div class="panel">
+					 	<input type="checkbox" name="selected" value="Chains" class="tickbox" id="Chains">
+						<label for="Chains" class="namebox">Chains</label>
+						<br>
+						<input type="checkbox" name="selected" value="Bracalets" class="tickbox" id="Bracalets">
+						<label for="Bracalets" class="namebox">Bracalets</label>
+						<br>
+						<input type="checkbox" name="selected" value="Pendants" class="tickbox" id="Pendants">
+						<label for="Pendants" class="namebox">Pendants</label>
+						<br>
+					</div>
+					
+					<button class="accordion">DETAIL <i class="fa fa-caret-down"></i></button>
+					<div class="panel">
+					 	<input type="checkbox" name="selected" value="Tennis Chains" class="tickbox" id="Tennis Chains">
+						<label for="Tennis Chains" class="namebox">Tennis Chains</label>
+						<br>
+						<input type="checkbox" name="selected" value="Cuban Chainis" class="tickbox" id="Cuban Chainis">
+						<label for="Cuban Chainis" class="namebox">Cuban Chainis</label>
+						<br>
+						<input type="checkbox" name="selected" value="Rope Chains" class="tickbox" id="Rope Chains">
+						<label for="Rope Chains" class="namebox">Rope Chains</label>
+						<br>
+						<input type="checkbox" name="selected" value="Sets Chains" class="tickbox" id="Sets Chains">
+						<label for="Sets Chains" class="namebox">Sets Chains</label>
+						<br>
+						<hr class="gach1">
+						<input type="checkbox" name="selected" value="White Gold" class="tickbox" id="White Gold">
+						<label for="White Gold" class="namebox">White Gold</label>
+						<br>
+						<input type="checkbox" name="selected" value="Yellow Gold" class="tickbox" id="Yellow Gold">
+						<label for="Yellow Gold" class="namebox">Yellow Gold</label>
+						<br>
+						<input type="checkbox" name="selected" value="Rose Gold" class="tickbox" id="Rose Gold">
+						<label for="Rose Gold" class="namebox">Rose Gold</label>
+					</div>
+					
+					<button class="accordion">SCREENING <i class="fa fa-caret-down"></i></button>
+					<div class="panel">
+						<input type="radio" name="SCREENING" value="high" id="high">
+						<label for="high" class="namebox">Price, Low To High</label>
+						<br>
+						<input type="radio" name="SCREENING" value="low" id="low">
+						<label for="low" class="namebox">Price, High To Low</label>
+						<br>
+						<input type="radio" name="SCREENING" value="AZ" id="AZ">
+						<label for="AZ" class="namebox">Alphabetically, A-Z</label>
+						<br>
+						<input type="radio" name="SCREENING" value="ZA" id="ZA">
+						<label for="ZA" class="namebox">Alphabetically, Z-A</label>
+						<br>
+						<input type="radio" name="SCREENING" value="old" id="old">
+						<label for="old" class="namebox">Date, Old To New</label>
+						<br>
+						<input type="radio" name="SCREENING" value="new" id="new">
+						<label for="new" class="namebox">Date, New To Old</label>
+						<br>
+						<input type="radio" name="SCREENING" value="best" id="best">
+						<label for="best" class="namebox">Best Selling</label>
+						<br>
+						<hr class="gach1">
+						<p id="evaluate">EVALUATE</p>
+						<input type="radio" name="evaluate" value="new" id="1">
+						<label for="1" class="namebox">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+						</label>
+						<br>
+						<input type="radio" name="evaluate" value="new" id="2">
+						<label for="2" class="namebox">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+						</label>
+						<br>
+						<input type="radio" name="evaluate" value="new" id="3">
+						<label for="3" class="namebox">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</label>
+						<br>
+						<input type="radio" name="evaluate" value="new" id="4">
+						<label for="4" class="namebox">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</label>
+						<br>
+						<input type="radio" name="evaluate" value="new" id="5">
+						<label for="5" class="namebox">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</label>
+						<div class="btcheckk">
+							<button class="btcheckk1"><a>CHECKED</a></button>
+						</div>
+					</div>
+				</div><!--filtermobi-->
+			</div><!--row-->
+		  </div><!--container-fluid-->
+		  
+		  <!---filter--->
+	  	<div class="container-fluid">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-3
+								col-lg-3
+								col-md-4
+								d-md-block
+								d-none" id="filter">
+						<button class="accordion">PRODUCT <i class="fa fa-caret-down"></i></button>
+						<div class="panel">
+							<input type="checkbox" name="selected" value="Chainss" class="tickbox" id="Chainss">
+							<label for="Chains" class="namebox">Chains</label>
+							<br>
+							<input type="checkbox" name="selected" value="Bracaletss" class="tickbox" id="Bracaletss">
+							<label for="Bracalets" class="namebox">Bracalets</label>
+							<br>
+							<input type="checkbox" name="selected" value="Pendantss" class="tickbox" id="Pendantss">
+							<label for="Pendants" class="namebox">Pendants</label>
+							<br>
+						</div>
+
+						<button class="accordion">DETAIL <i class="fa fa-caret-down"></i></button>
+						<div class="panel">
+							<input type="checkbox" name="selected" value="chains" class="tickbox" id="TennisChains">
+							<label for="TennisChains" class="namebox">Tennis Chains</label>
+							<br>
+							<input type="checkbox" name="selected" value="Cuban Chainis" class="tickbox" id="CubanChainis">
+							<label for="CubanChainis" class="namebox">Cuban Chainis</label>
+							<br>
+							<input type="checkbox" name="selected" value="Rope Chains" class="tickbox" id="RopeChains">
+							<label for="RopeChains" class="namebox">Rope Chains</label>
+							<br>
+							<input type="checkbox" name="selected" value="Sets Chains" class="tickbox" id="SetsChains">
+							<label for="SetsChains" class="namebox">Sets Chains</label>
+							<br>
+							<hr class="gach1">
+							<input type="checkbox" name="selected" value="White Gold" class="tickbox" id="WhiteGold">
+							<label for="WhiteGold" class="namebox">White Gold</label>
+							<br>
+							<input type="checkbox" name="selected" value="Yellow Gold" class="tickbox" id="YellowGold">
+							<label for="YellowGold" class="namebox">Yellow Gold</label>
+							<br>
+							<input type="checkbox" name="selected" value="Rose Gold" class="tickbox" id="RoseGold">
+							<label for="RoseGold" class="namebox">Rose Gold</label>
+						</div>
+
+						<button class="accordion">SCREENING <i class="fa fa-caret-down"></i></button>
+						<div class="panel">
+							<input type="radio" name="SCREENING" value="high" id="highh">
+							<label for="highh" class="namebox">Price, Low To High</label>
+							<br>
+							<input type="radio" name="SCREENING" value="low" id="loww">
+							<label for="loww" class="namebox">Price, High To Low</label>
+							<br>
+							<input type="radio" name="SCREENING" value="AZ" id="AZz">
+							<label for="AZz" class="namebox">Alphabetically, A-Z</label>
+							<br>
+							<input type="radio" name="SCREENING" value="ZA" id="ZAa">
+							<label for="ZAa" class="namebox">Alphabetically, Z-A</label>
+							<br>
+							<input type="radio" name="SCREENING" value="old" id="oldd">
+							<label for="oldd" class="namebox">Date, Old To New</label>
+							<br>
+							<input type="radio" name="SCREENING" value="new" id="neww">
+							<label for="neww" class="namebox">Date, New To Old</label>
+							<br>
+							<input type="radio" name="SCREENING" value="best" id="bestt">
+							<label for="bestt" class="namebox">Best Selling</label>
+							<br>
+							<hr class="gach1">
+							<p id="evaluat">EVALUATE</p>
+							<input type="radio" name="evaluate" value="new" id="11">
+							<label for="11" class="namebox">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+							</label>
+							<br>
+							<input type="radio" name="evaluate" value="new" id="9">
+							<label for="" class="namebox">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+							</label>
+							<br>
+							<input type="radio" name="evaluate" value="new" id="8">
+							<label for="8" class="namebox">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</label>
+							<br>
+							<input type="radio" name="evaluate" value="new" id="7">
+							<label for="7" class="namebox">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</label>
+							<br>
+							<input type="radio" name="evaluate" value="new" id="6">
+							<label for="6" class="namebox">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</label>
+							<div class="btcheckk">
+								<button class="btcheckk1"><a>CHECKED</a></button>
+							</div>
+						</div><!--panel-->
+					</div><!--filter-->
+					<div class="col-xl-9
+								col-lg-9
+								col-md-8
+								col-ms-12
+								col-12 boxproduct">
+						<div class="row">
+							<div class="col-xl-4
+										col-lg-4
+										col-md-6
+										col-ms-6
+										col-6 boxproduct1">
+								<div class="boxpd">
+									<a href="TAN_Detail-Pendants.html"><img src="imgs/Iced Out Baguette Cross in Yellow Gold.jpg"></a>
+									<br>
+									<p class="namepd"><strong>Iced Out Baguette<br>Cross Yellow Gold</strong></p>
+
+									<p class="form">Form <strong>$95.00</strong></p>
+									<button class="order"><a href="TAN_Detail-Pendants.html">ORDER NOW</a></button>
+								</div>
+							</div>
+							<div class="col-xl-4
+										col-lg-4
+										col-md-6
+										col-ms-6
+										col-6 boxproduct1">
+								<div class="boxpd">
+									<a href="TAN_Detail-Pendants.html"><img src="imgs/Iced Out 21 Sword in White Gold.jpg"></a>
+									<br>
+									<p class="namepd"><strong>Iced Out 21 Sword<br>in White Gold</strong></p>
+									<p class="form">Form <strong>$95.00</strong></p>
+									<button class="order"><a href="TAN_Detail-Pendants.html">ORDER NOW</a></button>
+								</div>
+							</div>
+							<div class="col-xl-4
+										col-lg-4
+										col-md-6
+										col-ms-6
+										col-6 boxproduct1">
+								<div class="boxpd">
+									<a href="TAN_Detail-Pendants.html"><img src="imgs/Iced Out Original Cross in White Gold.jpg"></a>
+									<br>
+									<p class="namepd"><strong>Iced Out Original<br>Cross White Gold</strong></p>
+									<p class="form">Form <strong>$95.00</strong></p>
+									<button class="order"><a href="TAN_Detail-Pendants.html">ORDER NOW</a></button>
+								</div>
+							</div>
+							<div class="col-xl-4
+										col-lg-4
+										col-md-6
+										col-ms-6
+										col-6 boxproduct1">
+								<div class="boxpd">
+									<a href="TAN_Detail-Pendants.html"><img src="imgs/Iced Out Broken Heart in White Gold.jpg"></a>
+									<br>
+									<p class="namepd"><strong>Iced Out Broken<br>Heart White Gold</strong></p>
+									<p class="form">Form <strong>$95.00</strong></p>
+									<button class="order"><a href="TAN_Detail-Pendants.html">ORDER NOW</a></button>
+								</div>
+							</div>
+							<div class="col-xl-4
+										col-lg-4
+										col-md-6
+										col-ms-6
+										col-6 boxproduct1">
+								<div class="boxpd">
+									<a href="TAN_Detail-Pendants.html"><img src="imgs/Iced Out Baguette Hamsa Hand in Rose Gold.jpg"></a>
+									<br>
+									<p class="namepd"><strong>Iced Out Baguette<br>Hamsa Rose Gold</strong></p>
+									<p class="form">Form <strong>$95.00</strong></p>
+									<button class="order"><a href="TAN_Detail-Pendants.html">ORDER NOW</a></button>
+								</div>
+							</div>
+							<div class="col-xl-4
+										col-lg-4
+										col-md-6
+										col-ms-6
+										col-6 boxproduct1">
+								<div class="boxpd">
+									<a href="TAN_Detail-Pendants.html"><img src="imgs/Iced Out Bow And Arrow in White & Rose Gold.jpg"></a>
+									<br>
+									<p class="namepd"><strong>Iced Out Bow Arrow<br>White &amp; Rose Gold</strong></p>
+									<p class="form">Form <strong>$95.00</strong></p>
+									<button class="order"><a href="TAN_Detail-Pendants.html">ORDER NOW</a></button>
+								</div>
+							</div>
+							<div class="col-xl-4
+										col-lg-4
+										col-md-6
+										col-ms-6
+										col-6 boxproduct1">
+								<div class="boxpd">
+									<a href="TAN_Detail-Pendants.html"><img src="imgs/Iced Out Stewie Griffin in White Gold.jpg"></a>
+									<br>
+									<p class="namepd"><strong>Iced Out Stewie<br>Griffin White Gold</strong></p>
+									<p class="form">Form <strong>$125.00</strong></p>
+									<button class="order"><a href="TAN_Detail-Pendants.html">ORDER NOW</a></button>
+								</div>
+							</div>
+							<div class="col-xl-4
+										col-lg-4
+										col-md-6
+										col-ms-6
+										col-6 boxproduct1">
+								<div class="boxpd">
+									<a href="TAN_Detail-Pendants.html"><img src="imgs/Iced Out Broken Heart In Yellow Gold.jpg"></a>
+									<br>
+									<p class="namepd"><strong>Iced Out Broken<br>Heart Yellow Gold</strong></p>
+									<p class="form">Form <strong>$95.00</strong></p>
+									<button class="order"><a href="TAN_Detail-Pendants.html">ORDER NOW</a></button>
+								</div>
+							</div>
+							<div class="col-xl-4
+										col-lg-4
+										col-md-6
+										col-ms-6
+										col-6 boxproduct1">
+								<div class="boxpd">
+									<a href="TAN_Detail-Pendants.html"><img src="imgs/Iced Out Gengar Pokemon in White Gold.jpg"></a>
+									<br>
+									<p class="namepd"><strong>Iced Out Pokemon<br>White Gold</strong></p>
+									<p class="form">Form <strong>$125.00</strong></p>
+									<button class="order"><a href="TAN_Detail-Pendants.html">ORDER NOW</a></button>
+								</div>
+							</div>
+							<div class="col-xl-4
+										col-lg-4
+										col-md-6
+										col-ms-6
+										col-6 boxproduct1">
+								<div class="boxpd">
+									<a href="TAN_Detail-Pendants.html"><img src="imgs/Iced Out Gengar Pokemon in Yellow Gold.jpg"></a>
+									<br>
+									<p class="namepd"><strong>Iced Out Pokemon<br>Yellow Gold</strong></p>
+									<p class="form">Form <strong>$125.00</strong></p>
+									<button class="order"><a href="TAN_Detail-Pendants.html">ORDER NOW</a></button>
+								</div>
+							</div>
+							<div class="col-xl-4
+										col-lg-4
+										col-md-6
+										col-ms-6
+										col-6 boxproduct1">
+								<div class="boxpd">
+									<a href="TAN_Detail-Pendants.html"><img src="imgs/Iced Out Rocket in White Gold.jpg"></a>
+									<br>
+									<p class="namepd"><strong>Iced Out Rocket<br>in White Gold</strong></p>
+									<p class="form">Form <strong>$95.00</strong></p>
+									<button class="order"><a href="TAN_Detail-Pendants.html">ORDER NOW</a></button>
+								</div>
+							</div>
+							<div class="col-xl-4
+										col-lg-4
+										col-md-6
+										col-ms-6
+										col-6 boxproduct1">
+								<div class="boxpd">
+									<a href="TAN_Detail-Pendants.html"><img src="imgs/Iced Out Wolf in Yellow Gold.jpg"></a>
+									<br>
+									<p class="namepd"><strong>Iced Out Wolf<br>in Yellow Gold</strong></p>
+									<p class="form">Form <strong>$95.00</strong></p>
+									<button class="order"><a href="TAN_Detail-Pendants.html">ORDER NOW</a></button>
+								</div>
+							</div>
+							<div class="col-xl-4
+										col-lg-4
+										col-md-6
+										col-ms-6
+										col-6 boxproduct1">
+								<div class="boxpd">
+									<a href="TAN_Detail-Pendants.html"><img src="imgs/Iced Out Three Tone Purple Snake.jpg"></a>
+									<br>
+									<p class="namepd"><strong>Iced Out Three<br>Purple Snake</strong></p>
+									<p class="form">Form <strong>$95.00</strong></p>
+									<button class="order"><a href="TAN_Detail-Pendants.html">ORDER NOW</a></button>
+								</div>
+							</div>
+							<div class="col-xl-4
+										col-lg-4
+										col-md-6
+										col-ms-6
+										col-6 boxproduct1">
+								<div class="boxpd">
+									<a href="TAN_Detail-Pendants.html"><img src="imgs/Iced Out Shark in Rose Gold.jpg"></a>
+									<br>
+									<p class="namepd"><strong>Iced Out Shark<br>in Rose Gold</strong></p>
+									<p class="form">Form <strong>$95.00</strong></p>
+									<button class="order"><a href="TAN_Detail-Pendants.html">ORDER NOW</a></button>
+								</div>
+							</div>
+							<div class="col-xl-4
+										col-lg-4
+										col-md-6
+										col-ms-6
+										col-6 boxproduct1">
+								<div class="boxpd">
+									<a href="TAN_Detail-Pendants.html"><img src="imgs/Iced Out Original Cross in Yellow Gold.jpg"></a>
+									<br>
+									<p class="namepd"><strong>Iced Out Original<br>Cross Yellow Gold</strong></p>
+									<p class="form">Form <strong>$95.00</strong></p>
+									<button class="order"><a href="TAN_Detail-Pendants.html">ORDER NOW</a></button>
+								</div>
+							</div>
+						</div><!---row-->
+						<div class="row justify-content-center">
+							<div class="col-xl-12
+										col-lg-12
+										col-md-12
+										col-ms-12
+										col-12" id="sotrang">
+								<div class="pagination">
+								  <a href="TAN_Products.html">&laquo;</a>
+								  <a href="TAN_Products.html">1</a>
+								  <a class="active" href="TAN_Products.html">2</a>
+								  <a href="TAN_Products.html">3</a>
+								  <a href="TAN_Products.html">4</a>
+								  <a href="TAN_Products.html">5</a>
+								  <a href="TAN_Products.html">6</a>
+								  <a href="TAN_Products.html">&raquo;</a>
+								</div>
+							</div>
+						</div>
+					</div><!---boxproduct-->
+				</div><!--row-->	
+			</div><!--container-->
+	  </div><!---container-fluid-->
+	  
+	  <div class="container-fluid">
+	  	  <div class="container">
+		  
+		  </div>
+	  </div>
+	  
+	  
+	  
+	  
+	  
+	  <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
+	  
+	 
+
+	  <!--Footer-->
+	  <div class="container-fluid" id="bgfooter">
+	  		<div class="container">
+				<div class="row justify-content-center">	
+					<div class="col-xl-4 
+							col-lg-4 
+							col-md-4 
+							col-sm-12
+							col-12" id="copyright">
+						<img src="imgs/logo.png">
+						<h5>GET CONNECTED</h5>
+						<ul class="nav2 justify-content-center">
+						<li class="nav-item">
+						  <a class="nav-link" href="#"><i class="fab fa-facebook-square"></i></a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#"><i class="fab fa-twitter-square"></i></a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#"><i class="fab fa-linkedin"></i></a>
+						</li>
+						</ul>
+						
+				</div><!--copyright-->	
+					
+				
+				<div class="col-xl-4 
+							col-lg-4 
+							col-md-4 
+							col-sm-6
+							col-6" id="copyright1">
+					<h5>INFORMATON</h5>
+					<ul class="nav1 flex-column justify-content-center">
+						<li class="nav-item">
+						  <a class="nav-link" href="THIEN_FAQ.html">FAQ</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#">Return and Exchange</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#">Privacy Policy</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="FAQ.html">Diamo lifetime guarantee</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#">Terms of service</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#">Shipping policy</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="KHOI_NEWS.html">News</a>
+						</li>
+					</ul>
+				</div><!--copyright1-->
+				
+				<div class="col-xl-4 
+							col-lg-4 
+							col-md-4 
+							col-sm-6
+							col-6" id="subcribe">
+					<h5>NEVER MISS THINGS</h5>
+					<h5>JOIN MAILING LIST</h5>
+					<form>
+						<input type="text" placeholder="Your email..." class="footerform">
+					</form>
+					<button class="subbtn">SUBSCRIBE</button>
+				</div><!--subcribe-->
+			</div><!--row-->
+				
+				<div class="row">
+							<div class="col-xl-12
+									col-lg-12
+									col-md-12
+									col-sm-12
+									col-12" id="address">
+								<p><i class="fas fa-map-marker-alt"></i>  8 Pasteur, District 1, HCMC</p>
+								<p><i class="fas fa-phone-volume"></i> 0283 758 11 66</p>
+								<p><i class="fas fa-envelope"></i> Diamojewelry@gmal.com</p>
+								<p><i class="fas fa-link"></i> Diamojewelry.com</p>
+							</div>
+						</div>
+				
+			<div class="row">
+				<div class="col-xl-12
+							col-lg-12
+							col-md-12
+							col-sm-12
+							col-12" id="last">
+				<hr>
+				<p>Copyright DIAMO, Inc. All Rights Reserved</p>
+				</div>
+			</div><!--row-->
+		  </div><!--container-->
+	  </div><!--container-fluid-->
+   <script>
+		//Get the button
+		var mybutton = document.getElementById("myBtn");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+		  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			mybutton.style.display = "block";
+		  } else {
+			mybutton.style.display = "none";
+		  }
+		}
+
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+		  document.body.scrollTop = 0;
+		  document.documentElement.scrollTop = 0;
+		}
+		</script>
+  </body>
+</html>>>>

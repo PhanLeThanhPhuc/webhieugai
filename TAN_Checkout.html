@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TAN_Checkout + Payment</title>
+     <!-- CSS -->
+	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+	<link href="js/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="js/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" rel="stylesheet">
+	<link href="font/fontawesome/css/all.min.css" rel="stylesheet">
+	<link href="css/style_home.css" rel="stylesheet">
+	<link href="css/style_checkout.css" rel="stylesheet">
+	<!-- JavaScript--> 
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/popper.min.js"></script> 
+	<script src="js/bootstrap-4.4.1.js"></script>
+	<script src="js/OwlCarousel2-2.3.4/dist/owl.carousel.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#mobilenavi").hide();
+			$("#blackscreen").hide();
+			$("#bgmobilesearch").hide();
+			
+			$("#iconhamburger").click(function(){
+				 $("#mobilenavi").slideToggle();
+				 $("#blackscreen").fadeToggle();
+			});
+			
+			$("#blackscreen").click(function(){
+				$("#mobilenavi,#bgmobilesearch").slideUp();
+				$("#blackscreen").fadeOut();
+			});
+			
+			$("#icons").click(function(){
+				$("#bgmobilesearch").slideToggle();
+				$("#blackscreen").fadeToggle();
+			});
+		})
+		
+		$(document). ready(function(){
+  			$(".owl-carousel").owlCarousel({
+				item: 5,
+				margin: 30,
+				loop: true,
+				autoplay: true,
+				autoplayTimeout: 3000,
+				autoplayHoverPause: true,
+				responsive:{
+					0:{
+						items: 2,
+						autoplay: false,
+						center: true,
+					},
+					576:{
+						items: 2,
+						autoplay: false,
+						center: true,
+					},
+					768:{
+						items: 3,
+					},
+					992:{
+						items: 4,
+					},
+					1200:{
+						items: 4,
+					},
+				}
+			});
+		});
+	</script>
+  </head>
+  <body>
+  	<!--Black Sreen-->
+	  	<div class="container-fluid d-md-none" id="blackscreen">
+	  </div><!--container-fluid-->
+	  
+  	<!-- HEADER -->
+		<div class="container-fluid d-none d-md-block" id="bgheader">
+	 	<div class="container">
+		 	<div class="row">
+				<div class="col-xl-3
+							col-lg-3
+							col-md-4" id="aboutstore">
+				<ul class="nav">
+					<li class="nav-item">
+						<a class="nav-link" href="THIEN_FAQ.html">FAQ</a>
+					</li>
+					<li class="nav-item">|</li>
+					<li class="nav-item">
+						<a class="nav-link" href="LONG_ABOUT US.html">About Us</a>
+					</li>
+				</ul>
+				</div><!--aboutstore-->
+				<div class="col-xl-5 offset-xl-1
+							col-lg-5 offset-lg-1
+							col-md-4 offset-md-0" id="searchbox">
+				<form action="" method="post">
+					<input type="text" placeholder="Search here..." id="searchfill">
+					<button id="searchicon"><i class="fas fa-search"></i></button>
+				</form>
+				</div><!--searchbox-->
+				<div class="col-xl-3
+							col-lg-3
+							col-md-4" id="signinup">
+				<ul class="nav justify-content-end">
+					<li class="nav-item">
+						<a class="nav-link" href="#login" data-toggle="modal"><i class="fas fa-shopping-cart"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#login" data-toggle="modal">Log In</a>
+					</li>
+					<li class="nav-item">|</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#register" data-toggle="modal">Register</a>
+					</li>
+				</ul>
+				</div><!--signinup-->
+			</div><!--row-->
+		 </div><!--container-->
+	  </div><!--container-fluid-->
+	  
+	  <!--Modal Log In-->
+	  	<div class="modal fade" id="login">
+	  		<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<!--Header-->
+						<div class="modal-header">
+							<h4 class="modal-title">Log In</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div><!--modal-header-->
+					<!--Body-->
+						<div class="modal-body">
+							<form>
+								<label for="user" class="user1"><b>Username</b></label><br>
+								<input type="text" placeholder="Your username..." name="user">
+								<br>
+								<label for="pass" class="pass1"><b>Password</b></label><br>
+								<input type="password" placeholder="Your password..." name="pass">
+								<br>
+								<button type="submit" class="loginbtn">LOG IN</button>
+								<br>
+								  <label class="remember">
+									<input type="checkbox" checked="checked" name="remember"> Remember me
+								  </label>
+							</form>
+						</div><!--modal-body-->
+					<!--Footer-->
+						<div class="modal-footer">
+							<span class="psw">Forgot <a href="#">password?</a></span>
+							<button type="button" class="closebtn" data-dismiss="modal">Close</button>
+						</div><!--modal-footer-->
+				</div><!--modal-content-->
+			</div><!--modal-dialog-->
+	  	</div><!--modal-->
+	  
+	  <!--Modal Register-->
+	  	<div class="modal fade" id="register">
+	  		<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<!--Header-->
+						<div class="modal-header">
+							<h4 class="modal-title">Register</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div><!--modal-header-->
+					<!--Body-->
+						<div class="modal-body">
+							<form>
+								<label for="email" class="pass1"><b>Email</b></label>
+								  <input type="text" placeholder="Enter Email..." name="email" required>
+
+								  <label for="psw" class="pass1"><b>Password</b></label>
+								  <input type="password" placeholder="Enter Password..." name="psw" required>
+
+								  <label for="psw-repeat" class="pass1"><b>Repeat Password</b></label>
+								  <input type="password" placeholder="Repeat Password..." name="psw-repeat" required>
+
+								  <label class="remember">
+									<input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+								  </label>
+
+								  <p class="p3">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+							</form>
+						</div><!--modal-body-->
+					<!--Footer-->
+						<div class="modal-footer">
+							<button type="submit" class="regisbtn">REGISTER</button>
+							<button type="button" class="closebtn" data-dismiss="modal">Close</button>
+						</div><!--modal-footer-->
+				</div><!--modal-content-->
+			</div><!--modal-dialog-->
+	  	</div><!--modal-->
+	  
+	  
+	  <!--Navi-->
+	  <div class="container-fluid" id="bgnavi">
+	  		<div class="container">
+		  		<div class="row">
+					<div class="d-md-none
+								col-sm-2
+								col-2" id="iconhamburger">
+						<i class="fas fa-bars" id="hamburger"></i>
+					</div><!--iconhamburger-->
+					
+					<div class="col-xl-2 offset-xl-0
+								col-lg-2 offset-lg-0
+								col-md-2 offset-md-0
+								col-sm-2 offset-sm-3
+								col-2 offset-3" id="logo">
+						<a href="THIEN_HOME.html">
+							<img src="imgs/logo.png" id="logoicon">
+						</a>
+					</div><!--logo-->
+					<div class="col-xl-8 offset-xl-2
+								col-lg-9 offset-lg-1
+								col-md-10 offset-md-0
+								col-sm-4 offset-sm-2
+								d-none d-md-block" id="navi">
+						<ul class="nav justify-content-end">
+							<li class="nav-item dropdown">
+							  <a class="nav-link dropbtn" href="KHOI_PRODUCTS.html"><h4>Chains <i class="fa fa-caret-down"></i></h4></a>
+							  <div class="dropdown-content">
+								<a href="KHOI_PRODUCTS.html">Cuban Chains</a>
+								<a href="KHOI_PRODUCTS.html">Tennis Chains</a>
+								<a href="KHOI_PRODUCTS.html">Rope Chains</a>
+								<a href="KHOI_PRODUCTS.html">Sets</a>
+							  </div>
+							</li>
+							
+							<li class="nav-item dropdown">
+							  <a class="nav-link dropbtn" href="#"><h4>Bracelets <i class="fa fa-caret-down"></i></h4></a>
+							  <div class="dropdown-content">
+								<a href="LONG_PRODUCT.html">Tennis</a>
+								<a href="LONG_PRODUCT.html">Cuban</a>
+								<a href="LONG_PRODUCT.html">Sets</a>
+							  </div>
+							</li>
+							
+							<li class="nav-item">
+							  <a class="nav-link" href="TAN_Products.html"><h4>Pendants</h4></a>
+							</li>
+							
+							<li class="nav-item">
+							  <a class="nav-link" href="HIEU_PROMOTION.html"><h4>Promotion</h4></a>
+							</li>
+							
+							<li class="nav-item">
+							  <a class="nav-link" href="KHOI_NEWS.html"><h4>News</h4></a>
+							</li>
+							
+							<li class="nav-item">
+							  <a class="nav-link" href="THIEN_CONTACT.html"><h4>Contact</h4></a>
+							</li>
+						 </ul>
+					</div><!--navi-->
+					<div class="d-md-none
+								col-sm-1 offset-sm-2
+								col-1 offset-2" id="icons2">
+						<a href="LONG_SHOPPING CART.html"><i class="fas fa-shopping-cart" id="cartnavi"></i></a>
+					</div><!--icons-->
+					
+					<div class="d-md-none
+								col-sm-1 offset-sm-0
+								col-1 offset-0" id="icons">
+						<i class="fas fa-search" id="searchnavi"></i>
+					</div><!--icons-->
+				</div><!--row-->
+		  	</div><!--container-->
+	  	</div><!--container-fluid-->
+	  
+	  <!--Mobile Navi-->
+	  	<div class="container-fluid d-md-none" id="bgmobilenavi">
+	  		<div class="row">
+				<div class="col-sm-12
+							col-12" id="mobilenavi">
+					<ul class="nav flex-column">
+						<li class="nav-item dropdown">
+						  <a class="nav-link" data-toggle="dropdown" href="#"><h4>Chains <i class="fa fa-caret-down"></i></h4></a>
+						  <div class="dropdown-menu">
+							  <a class="dropdown-item" href="KHOI_PRODUCTS.html">Tennis Chains</a>
+							  <a class="dropdown-item" href="KHOI_PRODUCTS.html">Cuban Chains</a>
+							  <a class="dropdown-item" href="KHOI_PRODUCTS.html">Rope Chains</a>
+							  <a class="dropdown-item" href="KHOI_PRODUCTS.html">Sets</a>
+						  </div>
+						</li>
+						
+						<li class="nav-item dropdown">
+						  <a class="nav-link" data-toggle="dropdown" href="#"><h4>Bracelets <i class="fa fa-caret-down"></i></h4></a>
+						  <div class="dropdown-menu">
+							  <a class="dropdown-item" href="LONG_PRODUCT.html">Tennis</a>
+							  <a class="dropdown-item" href="LONG_PRODUCT.html">Cuban</a>
+							  <a class="dropdown-item" href="LONG_PRODUCT.html">Sets</a>
+						  </div>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="TAN_Products.html"><h4>Pendants</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="HIEU_PROMOTION.html"><h4>Promotion</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="KHOI_NEWS.html"><h4>News</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="THIEN_CONTACT.html"><h4>Contact</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="THIEN_FAQ.html"><h4>FAQ</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="LONG_ABOUT US.html"><h4>About us</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="#login" data-toggle="modal"><h4>Log In</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="#register" data-toggle="modal"><h4>Register</h4></a>
+						</li>
+					</ul>
+				</div><!--Mobilenavi-->
+			</div><!--row-->
+	  	</div><!--container-fluid-->
+	  <!--Mobile Search-->
+	  <div class="container-fluid d-md-none" id="bgmobilesearch">
+	  		<div class="row">
+		  		<div class="col-sm-12
+							col-12" id="mobilesearch">
+					<form action="" method="post">
+					<input type="text" placeholder="Search here..." id="mobilesearchfill">
+					<button id="mobilesearchicon"><i class="fas fa-search"></i></button>
+				</form>
+				</div><!--mobilesearch-->
+		  	</div><!--row-->
+	  </div><!--container-fluid-->
+	  
+	<!--CHECKOUT + PAYMENT-->
+	  <div class="container-fluid">
+		  <div class="container">
+			  <div class="row">
+				  <div class="col-xl-6
+							  col-lg-6
+							  col-md-12
+							  col-sm-12
+							  col-12 abc">
+					  <div class="billing">
+					  <h3><i class="fas fa-address-card"></i> Billing Address</h3>
+					  <label for="fname"><h4>Bill to</h4></label>
+					  <form action="" method="post">
+							<select id="sizebox">
+								<option value="australia">Select  Address</option>
+								<option value="australia">Select  Address</option>
+								<option value="australia">Select  Address</option>
+							</select>
+					  </form>
+					  <div class="row">
+						  <div class="col-xl-6
+									  col-lg-6
+									  col-md-6
+									  col-sm-6
+									  col-6">
+							  <label for="fname"><i class="fa fa-user"></i> Firt Name*</label>
+					  		  <input type="text" id="fname" name="firstname" placeholder="">
+						  </div>
+						  <div class="col-xl-6
+									  col-lg-6
+									  col-md-6
+									  col-sm-6
+									  col-6">
+							  <label for="email">Last Name*</label>
+							  <input type="text" id="lname" name="lastname" placeholder="">
+						  </div>
+					  </div>
+					  <label for="email"><i class="fa fa-envelope"></i> Email*</label>
+					  <input type="text" id="email" name="email" placeholder="">
+					  <label for="adr"><i class="fas fa-address-card"></i> Address*</label>
+					  <input type="text" id="adr" name="address" placeholder="">
+					  <div class="row">
+						  <div class="col-xl-6
+									  col-lg-6
+									  col-md-6
+									  col-sm-6
+									  col-6">
+							  <label for="city"><i class="fas fa-city"></i> City*</label>
+					  		  <input type="text" id="city" name="city" placeholder="">
+						  </div>
+						  <div class="col-xl-6
+									  col-lg-6
+									  col-md-6
+									  col-sm-6
+									  col-6">
+							  <label for="email">State*</label>
+							  <input type="text" id="state" name="state" placeholder="">
+						  </div>
+					  </div>
+					  <div class="row">
+						  <div class="col-xl-6
+									  col-lg-6
+									  col-md-6
+									  col-sm-6
+									  col-6">
+							  <label for="city"><i class="fas fa-phone-square-alt"></i> Phone*</label>
+					  		  <input type="text" id="phone" name="phone" placeholder="">
+						  </div>
+						  <div class="col-xl-6
+									  col-lg-6
+									  col-md-6
+									  col-sm-6
+									  col-6">
+							  <label for="email">Postal Code*</label>
+							  <input type="text" id="postal" name="postalcode" placeholder="">
+						  </div>
+					  	</div>
+					</div><!--billing-->
+				  </div><!--abc-->
+				  
+				  <div class="col-xl-6
+							  col-lg-6
+							  col-md-12
+							  col-sm-12
+							  col-12 abc">
+					  <div class="payment">
+					<h3><i class="fas fa-money-check-alt"></i>  Payment</h3>
+					  <h5>Credit Card Info</h5>
+					<label for="fname">Accepted payments</label>
+					<div class="icon-container">
+					  <i class="fab fa-cc-visa"></i>
+					  <i class="fab fa-cc-mastercard"></i>
+					  <i class="fab fa-cc-jcb"></i>
+					  <i class="fab fa-cc-jcb"></i>
+					  <i class="fab fa-cc-stripe"></i>
+					  <i class="fab fa-cc-diners-club"></i>
+					  <i class="fab fa-cc-amex"></i>
+					</div>
+					<label for="cname">Name On Card*</label>
+					<input type="text" id="cname" name="cardname" placeholder="Full Name">
+					<label for="ccnum">Card Number*</label>
+					<input type="text" id="ccnum" name="cardnumber" placeholder="1 2 3 4  -  5 6 7 8  -  9 0 1 2  -  3 4 5 6">
+					<div class="row">
+						  <div class="col-xl-3
+									  col-lg-3
+									  col-md-3
+									  col-sm-3
+									  col-3">
+							  <label for="expmonth">Exp Month*</label>
+							  <input type="text" id="expmonth" name="expmonth" placeholder="Aug">
+						  </div>
+						  <div class="col-xl-3
+									  col-lg-3
+									  col-md-3
+									  col-sm-3
+									  col-3">
+							  <label for="expyear">Exp Year</label>
+							  <input type="text" id="expyear" name="expyear" placeholder="2021">
+						  </div>
+						  <div class="col-xl-3
+									  col-lg-3
+									  col-md-3
+									  col-sm-3
+									  col-3">
+							  <label for="expyear">State*</label>
+							  <input type="text" id="statep" name="statep" placeholder="CA">
+						  </div>
+						  <div class="col-xl-3
+									  col-lg-3
+									  col-md-3
+									  col-sm-3
+									  col-3">
+							  <label for="expyear">Zip*</label>
+							  <input type="text" id="zip" name="zip" placeholder="12345">
+						  </div>
+					</div>
+					<label for="cvv">CVV Number*</label>
+					<input type="text" id="cvv" name="cvv" placeholder="4 5 6">
+					<hr> 
+					<div class="col-xl-12
+								col-lg-12
+								col-md-12
+								col-sm-12
+								col-12">
+						<form action="" method="post">
+							  <input type="checkbox" name="Brand" id="option1"> I agree to the <a> Terms &amp; Condition</a> and <a>Priviacy Policy </a>
+							  <label for="option1"></label>
+						</form>
+					 </div>
+					<div class="col-xl-8 offset-xl-4
+								col-lg-8 offset-lg-4
+								col-md-8 offset-md-2
+								col-sm-8 offset-sm-2
+								col-8 offset-2">
+						<a href="#" id="btnpay">Pay 199.00$</a>
+					</div>
+				  </div><!--payment-->
+				 </div><!--abc-->
+			  </div><!--row-->
+			  <div class="row">
+				  <div class="col-xl-12
+							  col-lg-12
+							  col-md-12
+							  col-sm-12
+							  col-12" id="save">
+					  	<form action="" method="post">
+							  <input type="checkbox" name="Brand" id="option2"> Save this infomation for next time
+							  <label for="option1"></label>
+						</form>
+				  </div>
+			  <a href="THIEN_HOME.html" id="btncomplete">RETURN TO HOME</a></div><!--row-->
+		  </div><!--container-->
+	  </div><!--container-fluid-->
+	  
+	  
+	  <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
+	  
+	 
+
+	  <!--Footer-->
+	  <div class="container-fluid" id="bgfooter">
+	  		<div class="container">
+				<div class="row justify-content-center">	
+					<div class="col-xl-4 
+							col-lg-4 
+							col-md-4 
+							col-sm-12
+							col-12" id="copyright">
+						<img src="imgs/logo.png">
+						<h5>GET CONNECTED</h5>
+						<ul class="nav2 justify-content-center">
+						<li class="nav-item">
+						  <a class="nav-link" href="#"><i class="fab fa-facebook-square"></i></a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#"><i class="fab fa-twitter-square"></i></a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#"><i class="fab fa-linkedin"></i></a>
+						</li>
+						</ul>
+						
+				</div><!--copyright-->	
+					
+				
+				<div class="col-xl-4 
+							col-lg-4 
+							col-md-4 
+							col-sm-6
+							col-6" id="copyright1">
+					<h5>INFORMATON</h5>
+					<ul class="nav1 flex-column justify-content-center">
+						<li class="nav-item">
+						  <a class="nav-link" href="THIEN_FAQ.html">FAQ</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#">Return and Exchange</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#">Privacy Policy</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="FAQ.html">Diamo lifetime guarantee</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#">Terms of service</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#">Shipping policy</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="KHOI_NEWS.html">News</a>
+						</li>
+					</ul>
+				</div><!--copyright1-->
+				
+				<div class="col-xl-4 
+							col-lg-4 
+							col-md-4 
+							col-sm-6
+							col-6" id="subcribe">
+					<h5>NEVER MISS THINGS</h5>
+					<h5>JOIN MAILING LIST</h5>
+					<form>
+						<input type="text" placeholder="Your email..." class="footerform">
+					</form>
+					<button class="subbtn">SUBSCRIBE</button>
+				</div><!--subcribe-->
+			</div><!--row-->
+				
+				<div class="row">
+							<div class="col-xl-12
+									col-lg-12
+									col-md-12
+									col-sm-12
+									col-12" id="address">
+								<p><i class="fas fa-map-marker-alt"></i>  8 Pasteur, District 1, HCMC</p>
+								<p><i class="fas fa-phone-volume"></i> 0283 758 11 66</p>
+								<p><i class="fas fa-envelope"></i> Diamojewelry@gmal.com</p>
+								<p><i class="fas fa-link"></i> Diamojewelry.com</p>
+							</div>
+						</div>
+				
+			<div class="row">
+				<div class="col-xl-12
+							col-lg-12
+							col-md-12
+							col-sm-12
+							col-12" id="last">
+				<hr>
+				<p>Copyright DIAMO, Inc. All Rights Reserved</p>
+				</div>
+			</div><!--row-->
+		  </div><!--container-->
+	  </div><!--container-fluid-->
+   <script>
+		//Get the button
+		var mybutton = document.getElementById("myBtn");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+		  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			mybutton.style.display = "block";
+		  } else {
+			mybutton.style.display = "none";
+		  }
+		}
+
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+		  document.body.scrollTop = 0;
+		  document.documentElement.scrollTop = 0;
+		}
+		</script>
+  </body>
+</html>

@@ -1,0 +1,259 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*==ONLY X-LARGE==*/
+@media(min-width: 1200px){
+	/*====FAQ====*/
+.accordion {
+  background-color:#C1D2E1;
+  color:#07162D;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 21px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color:#B7872D;
+}
+.accordion:focus{
+	background-color:#070F1B;
+	color: #fff;
+}
+.accordion:after {
+  content: '\002B';
+  color:#FFFFFF;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+	color: #fff;
+}
+
+.panel {
+  padding: 0px 18px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+	color:#07162D;
+}
+.panel p{
+  font-size: 17pt;
+}
+}
+/*==ONLY LARGE==*/
+@media(min-width: 992px) and (max-width: 1199px){
+	/*====FAQ====*/
+.accordion {
+  background-color:#C1D2E1;
+  color:#07162D;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 21px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color:#B7872D;
+}
+.accordion:focus{
+	background-color:#070F1B;
+	color: #fff;
+}
+.accordion:after {
+  content: '\002B';
+  color:#FFFFFF;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+	color: #fff;
+}
+
+.panel {
+  padding: 0px 18px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+	color:#07162D;
+}
+.panel p{
+  font-size: 17pt;
+}
+}
+
+/*==ONLY MEDIUM==*/
+@media(min-width: 768px) and (max-width: 991px){
+	/*====FAQ====*/
+.accordion {
+  background-color:#C1D2E1;
+  color:#07162D;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 21px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color:#C1D2E1;
+}
+.accordion:focus{
+	background-color:#070F1B;
+	color: #fff;
+}
+.accordion:after {
+  content: '\002B';
+  color:#FFFFFF;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+	color: #fff;
+}
+
+.panel {
+  padding: 0px 18px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+	color:#07162D;
+}
+.panel p{
+  font-size: 17pt;
+}
+}
+/*==ONLY SMALL==*/
+@media(min-width: 576px) and (max-width: 767px){
+	/*====FAQ====*/
+.accordion {
+  background-color:#C1D2E1;
+  color:#07162D;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 21px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color:#C1D2E1;
+}
+.accordion:focus{
+	background-color:#070F1B;
+	color: #fff;
+}
+.accordion:after {
+  content: '\002B';
+  color:#FFFFFF;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+	color: #fff;
+}
+
+.panel {
+  padding: 0px 18px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+	color:#07162D;
+}
+.panel p{
+  font-size: 17pt;
+}
+}
+/*==ONLY X-SMALL==*/
+@media(max-width: 575px){
+	/*====FAQ====*/
+.accordion {
+  background-color:#C1D2E1;
+  color:#07162D;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 21px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color:#C1D2E1;
+}
+.accordion:focus{
+	background-color:#070F1B;
+	color: #fff;
+}
+.accordion:after {
+  content: '\002B';
+  color:#FFFFFF;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+	color: #fff;
+}
+
+.panel {
+  padding: 0px 18px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+	color:#07162D;
+}
+.panel p{
+  font-size: 17pt;
+}
+}

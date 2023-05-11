@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FAQ</title>
+     <!-- CSS -->
+	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+	<link href="font/fontawesome/css/all.min.css" rel="stylesheet">
+	<link href="css/style_home.css" rel="stylesheet">
+	<link href="css/style_FAQ.css" rel="stylesheet">
+	<!-- JavaScript--> 
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/popper.min.js"></script> 
+	<script src="js/bootstrap-4.4.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#mobilenavi").hide();
+			$("#blackscreen").hide();
+			$("#bgmobilesearch").hide();
+			
+			$("#iconhamburger").click(function(){
+				 $("#mobilenavi").slideToggle();
+				 $("#blackscreen").fadeToggle();
+			});
+			
+			$("#blackscreen").click(function(){
+				$("#mobilenavi,#bgmobilesearch").slideUp();
+				$("#blackscreen").fadeOut();
+			});
+			
+			$("#icons").click(function(){
+				$("#bgmobilesearch").slideToggle();
+				$("#blackscreen").fadeToggle();
+			});
+		})  
+	</script>
+  </head>
+  <body>
+  	 
+	<!--Black Sreen-->
+	  <div class="container-fluid d-md-none" id="blackscreen">
+	  </div><!--container-fluid-->
+  	<!-- HEADER -->
+		<div class="container-fluid d-none d-md-block" id="bgheader">
+	 	<div class="container">
+		 	<div class="row">
+				<div class="col-xl-3
+							col-lg-3
+							col-md-4" id="aboutstore">
+				<ul class="nav">
+					<li class="nav-item">
+						<a class="nav-link" href="THIEN_FAQ.html">FAQ</a>
+					</li>
+					<li class="nav-item">|</li>
+					<li class="nav-item">
+						<a class="nav-link" href="LONG_ABOUT US.html">About Us</a>
+					</li>
+				</ul>
+				</div><!--aboutstore-->
+				<div class="col-xl-5 offset-xl-1
+							col-lg-5 offset-lg-1
+							col-md-4 offset-md-0" id="searchbox">
+				<form action="" method="post">
+					<input type="text" placeholder="Search here..." id="searchfill">
+					<button id="searchicon"><i class="fas fa-search"></i></button>
+				</form>
+				</div><!--searchbox-->
+				<div class="col-xl-3
+							col-lg-3
+							col-md-4" id="signinup">
+				<ul class="nav justify-content-end">
+					<li class="nav-item">
+						<a class="nav-link" href="#login" data-toggle="modal"><i class="fas fa-shopping-cart"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#login" data-toggle="modal">Log In</a>
+					</li>
+					<li class="nav-item">|</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#register" data-toggle="modal">Register</a>
+					</li>
+				</ul>
+				</div><!--signinup-->
+			</div><!--row-->
+		 </div><!--container-->
+	  </div><!--container-fluid-->
+	  
+	  <!--Modal Log In-->
+	  	<div class="modal fade" id="login">
+	  		<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<!--Header-->
+						<div class="modal-header">
+							<h4 class="modal-title">Log In</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div><!--modal-header-->
+					<!--Body-->
+						<div class="modal-body">
+							<form>
+								<label for="user" class="user1"><b>Username</b></label><br>
+								<input type="text" placeholder="Your username..." name="user">
+								<br>
+								<label for="pass" class="pass1"><b>Password</b></label><br>
+								<input type="password" placeholder="Your password..." name="pass">
+								<br>
+								<button type="submit" class="loginbtn">LOG IN</button>
+								<br>
+								  <label class="remember">
+									<input type="checkbox" checked="checked" name="remember"> Remember me
+								  </label>
+							</form>
+						</div><!--modal-body-->
+					<!--Footer-->
+						<div class="modal-footer">
+							<span class="psw">Forgot <a href="#">password?</a></span>
+							<button type="button" class="closebtn" data-dismiss="modal">Close</button>
+						</div><!--modal-footer-->
+				</div><!--modal-content-->
+			</div><!--modal-dialog-->
+	  	</div><!--modal-->
+	  
+	  <!--Modal Register-->
+	  	<div class="modal fade" id="register">
+	  		<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<!--Header-->
+						<div class="modal-header">
+							<h4 class="modal-title">Register</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div><!--modal-header-->
+					<!--Body-->
+						<div class="modal-body">
+							<form>
+								<label for="email" class="pass1"><b>Email</b></label>
+								  <input type="text" placeholder="Enter Email..." name="email" required>
+
+								  <label for="psw" class="pass1"><b>Password</b></label>
+								  <input type="password" placeholder="Enter Password..." name="psw" required>
+
+								  <label for="psw-repeat" class="pass1"><b>Repeat Password</b></label>
+								  <input type="password" placeholder="Repeat Password..." name="psw-repeat" required>
+
+								  <label class="remember">
+									<input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+								  </label>
+
+								  <p class="p3">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+							</form>
+						</div><!--modal-body-->
+					<!--Footer-->
+						<div class="modal-footer">
+							<button type="submit" class="regisbtn">REGISTER</button>
+							<button type="button" class="closebtn" data-dismiss="modal">Close</button>
+						</div><!--modal-footer-->
+				</div><!--modal-content-->
+			</div><!--modal-dialog-->
+	  	</div><!--modal-->
+	  
+	  
+	  <!--Navi-->
+	  <div class="container-fluid" id="bgnavi">
+	  		<div class="container">
+		  		<div class="row">
+					<div class="d-md-none
+								col-sm-2
+								col-2" id="iconhamburger">
+						<i class="fas fa-bars" id="hamburger"></i>
+					</div><!--iconhamburger-->
+					
+					<div class="col-xl-2 offset-xl-0
+								col-lg-2 offset-lg-0
+								col-md-2 offset-md-0
+								col-sm-2 offset-sm-3
+								col-2 offset-3" id="logo">
+						<a href="THIEN_HOME.html">
+							<img src="imgs/logo.png" id="logoicon">
+						</a>
+					</div><!--logo-->
+					<div class="col-xl-8 offset-xl-2
+								col-lg-9 offset-lg-1
+								col-md-10 offset-md-0
+								col-sm-4 offset-sm-2
+								d-none d-md-block" id="navi">
+						<ul class="nav justify-content-end">
+							<li class="nav-item dropdown">
+							  <a class="nav-link dropbtn" href="KHOI_PRODUCTS.html"><h4>Chains <i class="fa fa-caret-down"></i></h4></a>
+							  <div class="dropdown-content">
+								<a href="KHOI_PRODUCTS.html">Cuban Chains</a>
+								<a href="KHOI_PRODUCTS.html">Tennis Chains</a>
+								<a href="KHOI_PRODUCTS.html">Rope Chains</a>
+								<a href="KHOI_PRODUCTS.html">Sets</a>
+							  </div>
+							</li>
+							
+							<li class="nav-item dropdown">
+							  <a class="nav-link dropbtn" href="#"><h4>Bracelets <i class="fa fa-caret-down"></i></h4></a>
+							  <div class="dropdown-content">
+								<a href="LONG_PRODUCT.html">Tennis</a>
+								<a href="LONG_PRODUCT.html">Cuban</a>
+								<a href="LONG_PRODUCT.html">Sets</a>
+							  </div>
+							</li>
+							
+							<li class="nav-item">
+							  <a class="nav-link" href="TAN_Products.html"><h4>Pendants</h4></a>
+							</li>
+							
+							<li class="nav-item">
+							  <a class="nav-link" href="HIEU_PROMOTION.html"><h4>Promotion</h4></a>
+							</li>
+							
+							<li class="nav-item">
+							  <a class="nav-link" href="KHOI_NEWS.html"><h4>News</h4></a>
+							</li>
+							
+							<li class="nav-item">
+							  <a class="nav-link" href="THIEN_CONTACT.html"><h4>Contact</h4></a>
+							</li>
+						 </ul>
+					</div><!--navi-->
+					<div class="d-md-none
+								col-sm-1 offset-sm-2
+								col-1 offset-2" id="icons2">
+						<a href="LONG_SHOPPING CART.html"><i class="fas fa-shopping-cart" id="cartnavi"></i></a>
+					</div><!--icons-->
+					
+					<div class="d-md-none
+								col-sm-1 offset-sm-0
+								col-1 offset-0" id="icons">
+						<i class="fas fa-search" id="searchnavi"></i>
+					</div><!--icons-->
+				</div><!--row-->
+		  	</div><!--container-->
+	  	</div><!--container-fluid-->
+	  
+	  <!--Mobile Navi-->
+	  	<div class="container-fluid d-md-none" id="bgmobilenavi">
+	  		<div class="row">
+				<div class="col-sm-12
+							col-12" id="mobilenavi">
+					<ul class="nav flex-column">
+						<li class="nav-item dropdown">
+						  <a class="nav-link" data-toggle="dropdown" href="#"><h4>Chains <i class="fa fa-caret-down"></i></h4></a>
+						  <div class="dropdown-menu">
+							  <a class="dropdown-item" href="KHOI_PRODUCTS.html">Tennis Chains</a>
+							  <a class="dropdown-item" href="KHOI_PRODUCTS.html">Cuban Chains</a>
+							  <a class="dropdown-item" href="KHOI_PRODUCTS.html">Rope Chains</a>
+							  <a class="dropdown-item" href="KHOI_PRODUCTS.html">Sets</a>
+						  </div>
+						</li>
+						
+						<li class="nav-item dropdown">
+						  <a class="nav-link" data-toggle="dropdown" href="#"><h4>Bracelets <i class="fa fa-caret-down"></i></h4></a>
+						  <div class="dropdown-menu">
+							  <a class="dropdown-item" href="LONG_PRODUCT.html">Tennis</a>
+							  <a class="dropdown-item" href="LONG_PRODUCT.html">Cuban</a>
+							  <a class="dropdown-item" href="LONG_PRODUCT.html">Sets</a>
+						  </div>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="TAN_Products.html"><h4>Pendants</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="HIEU_PROMOTION.html"><h4>Promotion</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="KHOI_NEWS.html"><h4>News</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="THIEN_CONTACT.html"><h4>Contact</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="THIEN_FAQ.html"><h4>FAQ</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="LONG_ABOUT US.html"><h4>About us</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="#login" data-toggle="modal"><h4>Log In</h4></a>
+						</li>
+						
+						<li class="nav-item">
+						  <a class="nav-link" href="#register" data-toggle="modal"><h4>Register</h4></a>
+						</li>
+					</ul>
+				</div><!--Mobilenavi-->
+			</div><!--row-->
+	  	</div><!--container-fluid-->
+	  <!--Mobile Search-->
+	  <div class="container-fluid d-md-none" id="bgmobilesearch">
+	  		<div class="row">
+		  		<div class="col-sm-12
+							col-12" id="mobilesearch">
+					<form action="" method="post">
+					<input type="text" placeholder="Search here..." id="mobilesearchfill">
+					<button id="mobilesearchicon"><i class="fas fa-search"></i></button>
+				</form>
+				</div><!--mobilesearch-->
+		  	</div><!--row-->
+	  </div><!--container-fluid-->
+	  
+	  
+	   <!-- FAQ -->
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-xl-12 heading
+									col-lg-12
+									col-md-12
+									col-sm-12
+									col-12"><h1>FAQ</h1><hr></div>
+					</div><!--row-->
+	  				<div class="row">
+					<button class="accordion">How do I place an order?</button>
+					<div class="panel">
+					  <p>Add your desired items into your cart by clicking the "Add to cart" button. As soon as you are ready to check out, click the "Cart" button in the upper right part of the website. Here, you can update/change/add items in your shopping cart, you may add a discount code if you have one. The following step is checking out, by placing your address and payment information and confirming the order.</p>
+					</div>
+
+					<button class="accordion">How do I know if my order has been received?</button>
+					<div class="panel">
+					  <p>Upon placing an order, you will be sent a confirmation E-mail for the order you've placed. Please allow 1-3 business days for processing and handling. After the processing period, you will receive a second E-mail with the tracking number attached, provided by a shipping carrier of your choice.</p>
+					</div>
+
+					<button class="accordion">What forms of payment do you take?</button>
+					<div class="panel">
+					  <p>We accept secured payments via credit / debit card, PayPal, Apple Pay, Amazon Pay and we can do a bank wire / Zelle if you would like to inform us ahead of time. At checkout, you can also split the final price to 4 equal payments by choosing Quadpay as a payment method, using your credit / debit card if you live in the United States.</p>
+					</div>
+				
+					<button class="accordion">I put an incorrect address or incorrect information when placing my order, but now my order has already been placed. What can I do?</button>
+					<div class="panel">
+					  <p>If you put an incorrect address, you might contact us to check if the order has not shipped yet so we can cancel it in order for you to place a new order with the correct information. Once an order was placed, there will be no changes to any information including your shipping or billing address so please make sure to put the correct shipping and billing addresses.</p>
+					</div>
+				
+					<button class="accordion">What does DIAMO charge for shipping?</button>
+					<div class="panel">
+					  <p>Initial shipping is offered as free (no charge) worldwide via USPS First Class International Mail. Upon checkout, you may select alternative faster shipping options which we charge for depending on the shipping carrier (USPS, DHL or UPS) and shipping time.</p>
+					</div>
+						
+					<button class="accordion">How long does shipping take?</button>
+					<div class="panel">
+					  <p>A shipment in the United States is delivered within 1-3 business days and shipping outside of the United States is delivered within 5-21 business days. DIAMO takes up to 48 hours to process and prepare your order before shipping.</p>
+					</div>
+						
+					<button class="accordion">When will I know my order has been shipped?</button>
+					<div class="panel">
+					  <p>After processing and shipping your order, you will receive an email with the tracking number from the carrier of your choice. You may check your tracking number at anytime you desire until you receive the package. Once it says “Delivered”, it means your package has been delivered by the shipping courier.</p>
+					</div>
+						
+					<button class="accordion">If my shipping address is outside of the US, will I have to pay an Import Tax when placing the order?</button>
+					<div class="panel">
+					  <p>You won’t have to pay for Import Taxes on our website; however, you being the customer, will be importing the items and you have to be aware of all rules and regulations of your destination country. All orders shipped outside of the United States may be subject to import tax, which are in effect once the shipment reaches it’s destination country.</p>
+					</div>	
+						
+					<button class="accordion">According to my tracking number, my package has been delivered but I don’t physically have it. What should I do next?</button>
+					<div class="panel">
+					  <p>We aren’t not responsible for missing or lost packages once the tracking shows status as "delivered". Use the tracking number we provide you with to follow the order until it is delivered. If you never receive your order, but the tracking number shows that it has been delivered, please check with your mailman, neighbors or building manager/mail room and local post office before contacting us.</p>
+					</div>	
+						
+					<button class="accordion">If my desired product does not have the "add to cart" button, does that mean it's out of stock?</button>
+					<div class="panel">
+					  <p>Yes, this means the product is temporarily out of stock. We offer an option in which you can enter your personal E-mail address to be notified when the product is back in stock.</p>
+					</div>	
+			</div><!--row-->
+	  	</div><!--container-->
+	  
+	  <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
+	  
+	  <!--Footer-->
+	  <div class="container-fluid" id="bgfooter">
+	  		<div class="container">
+				<div class="row justify-content-center">	
+					<div class="col-xl-4 
+							col-lg-4 
+							col-md-4 
+							col-sm-12
+							col-12" id="copyright">
+						<img src="imgs/logo.png">
+						<h5>GET CONNECTED</h5>
+						<ul class="nav2 justify-content-center">
+						<li class="nav-item">
+						  <a class="nav-link" href="#"><i class="fab fa-facebook-square"></i></a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#"><i class="fab fa-twitter-square"></i></a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#"><i class="fab fa-linkedin"></i></a>
+						</li>
+						</ul>
+						
+				</div><!--copyright-->	
+					
+				
+				<div class="col-xl-4 
+							col-lg-4 
+							col-md-4 
+							col-sm-6
+							col-6" id="copyright1">
+					<h5>INFORMATON</h5>
+					<ul class="nav1 flex-column justify-content-center">
+						<li class="nav-item">
+						  <a class="nav-link" href="THIEN_FAQ.html">FAQ</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#">Return and Exchange</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#">Privacy Policy</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="FAQ.html">Diamo lifetime guarantee</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#">Terms of service</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#">Shipping policy</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="KHOI_NEWS.html">News</a>
+						</li>
+					</ul>
+				</div><!--copyright1-->
+				
+				<div class="col-xl-4 
+							col-lg-4 
+							col-md-4 
+							col-sm-6
+							col-6" id="subcribe">
+					<h5>NEVER MISS THINGS</h5>
+					<h5>JOIN MAILING LIST</h5>
+					<form>
+						<input type="text" placeholder="Your email..." class="footerform">
+					</form>
+					<button class="subbtn">SUBSCRIBE</button>
+				</div><!--subcribe-->
+			</div><!--row-->
+				
+				<div class="row">
+							<div class="col-xl-12
+									col-lg-12
+									col-md-12
+									col-sm-12
+									col-12" id="address">
+								<p><i class="fas fa-map-marker-alt"></i>  8 Pasteur, District 1, HCMC</p>
+								<p><i class="fas fa-phone-volume"></i> 0283 758 11 66</p>
+								<p><i class="fas fa-envelope"></i> Diamojewelry@gmal.com</p>
+								<p><i class="fas fa-link"></i> Diamojewelry.com</p>
+							</div>
+						</div>
+				
+			<div class="row">
+				<div class="col-xl-12
+							col-lg-12
+							col-md-12
+							col-sm-12
+							col-12" id="last">
+				<hr>
+				<p>Copyright DIAMO, Inc. All Rights Reserved</p>
+				</div>
+				
+			</div><!--row-->
+		  </div><!--container-->
+	  </div><!--container-fluid-->
+   <script>
+		//Get the button
+		var mybutton = document.getElementById("myBtn");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+		  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			mybutton.style.display = "block";
+		  } else {
+			mybutton.style.display = "none";
+		  }
+		}
+
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+		  document.body.scrollTop = 0;
+		  document.documentElement.scrollTop = 0;
+		}
+		</script>
+	  
+	  <script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+		  acc[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var panel = this.nextElementSibling;
+			if (panel.style.maxHeight) {
+			  panel.style.maxHeight = null;
+			} else {
+			  panel.style.maxHeight = panel.scrollHeight + "px";
+			} 
+		  });
+		}
+		</script>
+  </body>
+</html>
